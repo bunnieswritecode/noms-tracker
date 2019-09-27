@@ -1,0 +1,4 @@
+{
+    "database": "PATH_TO_DB_FILE",
+    "botToken": "BOT_TOKEN"
+}

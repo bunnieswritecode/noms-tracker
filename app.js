@@ -1,7 +1,7 @@
 // Load dependencies
 const Discord = require("discord.js");
-const DotEnv = require("dotenv").config();
 const Sqlite = require("sqlite3").verbose();
+const AppConfig = require("./config.json");
 
 // Bot Commands
 const BotCommands = {
@@ -21,11 +21,11 @@ const Emojis = {
 }
 
 // Establish DB connection
-const db = new Sqlite.Database(process.env.DB_FILE);
+const db = new Sqlite.Database(AppConfig.database);
 
 // Start up Discord bot
 const bot = new Discord.Client();
-bot.login(process.env.BOT_TOKEN);
+bot.login(AppConfig.botToken);
 
 // #region Bind event listeners
 bot.on("ready", function() {

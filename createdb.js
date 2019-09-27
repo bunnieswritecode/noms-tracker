@@ -1,6 +1,6 @@
 
 const Sqlite = require("sqlite3").verbose();
-const DotEnv = require("dotenv").config();
+const AppConfig = require("./config.json");
 
 var sql = `CREATE TABLE "Users" (
 	"Id"	INTEGER,
@@ -11,7 +11,7 @@ var sql = `CREATE TABLE "Users" (
 	PRIMARY KEY("Id")
 )`;
 
-const db = new Sqlite.Database(process.env.DB_FILE);
+const db = new Sqlite.Database(AppConfig.database);
 db.run(sql, function(err) {
     if (err) {
         console.error(err);
