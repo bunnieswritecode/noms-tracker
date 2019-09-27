@@ -5,6 +5,12 @@
 * Node.js
 * npm
 
+## Discord Bot Prep
+
+If you haven't created a bot, follow this [guide](https://github.com/reactiflux/discord-irc/wiki/Creating-a-discord-bot-&-getting-a-token) on creating one and having it join your server.
+
+Note: This app was written to target a single server (looking at you Bloo Croo). It doesn't distinguish users across servers, so make a unique bot for your server.
+
 ## Config
 
 Edit `config.json`.
@@ -43,5 +49,13 @@ Alternatively, if you want output redirected to a log file:
 node app > output.log 2>&1
 ```
 
-## Notes
-* App was written to target a single server (looking at you Bloo Croo). It doesn't distinguish users across servers/channels.
+## Bot Commands
+* !help - Displays this help text 
+* !next - Displays who is up next 
+* !creditme - Gives your user credit 
+* !paid - Marks your debt paid 
+* !rotation - Displays the rotation 
+* !addme - Adds your user to the rotation 
+* !removeme - Permanently removes your user from the rotation
+
+Start by having each user invoke the `!addme` command to register them into the tracker. See who is up next with `!next` (it'll also @mention them). If you've fulfilled your noms obligation, `!paid` will update the rotation and pull up the next victim.
