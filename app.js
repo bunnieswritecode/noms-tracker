@@ -218,6 +218,10 @@ function displayRotation(objMessage) {
                 msg += `${i+1}. ${rows[i].UserName} (Credits: ${+rows[i].NumCredits}) \n`;
             }
 
+            if (msg.length == 0) {
+                msg = "Just me here. Care to join me?";
+            }
+
             objChannel.send(msg);
         },
         tdReaction
