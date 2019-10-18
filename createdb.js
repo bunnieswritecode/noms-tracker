@@ -2,7 +2,7 @@
 const Sqlite = require("sqlite3").verbose();
 const AppConfig = require("./config.json");
 
-var sql = `CREATE TABLE "Users" (
+var sql = `CREATE TABLE IF NOT EXISTS "Users" (
 	"Id"	INTEGER,
 	"NumCredits"	INTEGER DEFAULT 0,
 	"DiscordId"	VARCHAR,
@@ -16,7 +16,4 @@ db.run(sql, function(err) {
     if (err) {
         console.error(err);
     }
-    else {
-        console.log("Created database table.");
-    }
-})
+});

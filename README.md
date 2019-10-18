@@ -29,25 +29,13 @@ Navigate to your clone of the repo and use `npm` to install the necessary module
 npm install
 ```
 
-## Database Creation
-
-A database creation script is included for first time deployments:
-
-```
-node createdb
-```
-
 ## Run
 
 To run the app:
 ```
-node app
+npm start
 ```
-
-Alternatively, if you want output redirected to a log file:
-```
-node app > output.log 2>&1
-```
+A prestart hook will initiatize the database.
 
 ## Bot Commands
 * !help - Displays this help text 
